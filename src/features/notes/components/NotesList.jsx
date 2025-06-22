@@ -42,7 +42,7 @@ function NotesList({
         className="flex justify-between items-center bg-white/70 dark:bg-white/5 shadow-sm dark:shadow-md backdrop-blur-md mb-6 p-4 border border-slate-200 dark:border-slate-700 rounded-xl"
       >
         <h2 className="flex items-center gap-1.5 font-serif font-semibold text-md text-sky-500 dark:text-white sm:text-xl tracking-normal sm:tracking-wide">
-          <span className="inline-flex justify-center items-center bg-white dark:bg-slate-800 drop-shadow p-2 rounded-full">
+          <span className="inline-flex justify-center items-center bg-white dark:bg-slate-800 shadow-[0_0_4px_rgba(0,0,0,0.5)] dark:shadow-[0_0_4px_rgba(255,255,255,0.4)] p-2 rounded-full">
             <BookHeart className="drop-shadow-md w-6 sm:w-9 h-6 sm:h-9 text-sky-500" />
           </span>
           YOUR NOTES{" "}
