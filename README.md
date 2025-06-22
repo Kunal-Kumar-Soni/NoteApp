@@ -129,14 +129,8 @@ $ cd notes-app
 $ npm install
 
 # Start development server
-$  npm run dev
+$ npm run dev
 ```
-
----
-
-## 📸 Screenshots
-
-_(Add screenshots of Home, Modal, TrashBin if available)_
 
 ---
 
