@@ -9,7 +9,15 @@ function NotesNav({ handleDarkMode, modes, search, setSearch }) {
   const [visibleSearch, setVisibleSearch] = useState(false); // mobile search toggle
 
   return (
-    <section className="border-slate-300 dark:border-slate-600 border-b">
+    <motion.section
+      initial={{ opacity: 0, x: -100, scale: 0.98 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.33, 1, 0.68, 1],
+      }}
+      className="border-slate-300 dark:border-slate-600 border-b"
+    >
       <div className="flex justify-between items-center mx-auto px-4 py-3 rounded-xl max-w-[1200px] duration-300">
         {/* Logo */}
         <div className="flex items-center">
@@ -84,7 +92,7 @@ function NotesNav({ handleDarkMode, modes, search, setSearch }) {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 }
 

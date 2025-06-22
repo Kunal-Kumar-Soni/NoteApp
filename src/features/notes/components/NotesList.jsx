@@ -91,7 +91,15 @@ function NotesList({
           </p>
         ) : noNotes ? (
           // If there are no notes at all
-          <div className="col-span-full mt-24 text-slate-500 dark:text-slate-400 text-center">
+          <motion.div
+            initial={{ opacity: 0, x: -100, scale: 0.98 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: [0.33, 1, 0.68, 1],
+            }}
+            className="col-span-full mt-24 text-slate-500 dark:text-slate-400 text-center"
+          >
             <StickyNote className="mx-auto mb-4 w-10 h-10 text-slate-400 dark:text-slate-500" />
             <h2 className="font-semibold text-2xl tracking-tight">
               It’s quiet here...
@@ -102,7 +110,7 @@ function NotesList({
             <p className="mt-2 text-base">
               Long press anywhere on a note to see more options.
             </p>
-          </div>
+          </motion.div>
         ) : null}
       </div>
     </section>

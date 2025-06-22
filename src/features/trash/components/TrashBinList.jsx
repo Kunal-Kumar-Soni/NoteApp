@@ -41,7 +41,15 @@ function TrashBinList({
         </div>
       ) : (
         // Empty trash message
-        <div className="bg-white dark:bg-sky-950 shadow-inner p-10 border-2 border-sky-200 dark:border-sky-700 border-dashed rounded-2xl text-center">
+        <motion.div
+          initial={{ opacity: 0, x: -100, scale: 0.98 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{
+            duration: 0.5,
+            ease: [0.33, 1, 0.68, 1],
+          }}
+          className="bg-white dark:bg-sky-950 shadow-inner p-10 border-2 border-sky-200 dark:border-sky-700 border-dashed rounded-2xl text-center"
+        >
           <h2 className="font-semibold text-sky-700 dark:text-sky-200 text-lg">
             No deleted notes yet.
           </h2>
@@ -49,7 +57,7 @@ function TrashBinList({
             When you delete a note, it will appear here. You can choose to
             restore or permanently delete it later.
           </p>
-        </div>
+        </motion.div>
       )}
     </div>
   );
