@@ -45,38 +45,40 @@ function ViewModal({
         >
           <div
             ref={modalRef}
-            className="relative bg-white dark:bg-slate-800 shadow-2xl p-6 border border-slate-300 dark:border-slate-700 rounded-2xl w-[90%] max-w-lg text-slate-800 dark:text-white transition-all"
+            className="relative bg-white dark:bg-slate-800 shadow-2xl border border-slate-300 dark:border-slate-700 rounded-2xl w-[100%] sm:min-w-[30%] max-w-[80%] max-h-[80vh] overflow-y-auto text-slate-800 dark:text-white transition-all custom-scroll"
           >
             {/* Close Button */}
             <button
               onClick={() => setIsViewModalOpen(false)}
-              className="top-4 right-4 absolute text-slate-400 hover:text-slate-600 dark:hover:text-white dark:text-slate-300 text-2xl active:scale-95 transition cursor-pointer"
+              className="top-4 float-right right-2 z-10 sticky bg-transparent text-slate-400 hover:text-slate-600 dark:hover:text-white dark:text-slate-300 text-xl sm:text-2xl active:scale-95 transition cursor-pointer"
             >
-              <MdClose size={22} />
+              <MdClose />
             </button>
 
-            {/* Note Title */}
-            <h2 className="mb-4 font-bold text-sky-600 dark:text-sky-400 text-2xl break-words line-clamp-1">
-              {selectedNote?.title.toUpperCase() || "Untitled Note"}
-            </h2>
+            <div className="p-6">
+              {/* Note Title */}
+              <h2 className="mb-4 font-bold text-sky-600 dark:text-sky-400 text-2xl break-words line-clamp-1">
+                {selectedNote?.title.toUpperCase() || "Untitled Note"}
+              </h2>
 
-            {/* Note Date */}
-            {selectedNote?.date && (
-              <p className="mb-4 text-sky-700 dark:text-sky-300 text-xs italic">
-                {new Date(selectedNote.date).toLocaleString(undefined, {
-                  weekday: "long", // e.g., "Saturday"
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
-              </p>
-            )}
+              {/* Note Date */}
+              {selectedNote?.date && (
+                <p className="mb-4 text-sky-700 dark:text-sky-300 text-xs italic">
+                  {new Date(selectedNote.date).toLocaleString(undefined, {
+                    weekday: "long", // e.g., "Saturday"
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+              )}
 
-            {/* Note Paragraph Content */}
-            <div className="text-base leading-relaxed tracking-wide whitespace-pre-line">
-              {selectedNote?.paragraph || "No content available."}
+              {/* Note Paragraph Content */}
+              <div className="text-base leading-relaxed tracking-wide whitespace-pre-line">
+                {selectedNote?.paragraph || "No content available."}
+              </div>
             </div>
           </div>
         </motion.div>
