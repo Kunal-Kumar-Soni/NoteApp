@@ -48,7 +48,7 @@ function TrashViewModal({
         >
           <div
             ref={modalRef}
-            className="relative bg-white dark:bg-slate-800 shadow-2xl border border-slate-300 dark:border-slate-700 rounded-2xl w-[100%] sm:min-w-[40%] max-w-[80%] max-h-[80vh] overflow-y-auto text-slate-800 dark:text-white transition-all custom-scroll"
+            className="relative bg-white dark:bg-slate-800 shadow-2xl border border-slate-300 dark:border-slate-700 rounded-2xl w-[100%] sm:w-auto sm:min-w-[30%] max-w-[80%] max-h-[80vh] overflow-y-auto text-slate-800 dark:text-white transition-all custom-scroll"
           >
             {/* Close button (top-right corner) */}
             <button
