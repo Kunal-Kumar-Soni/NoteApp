@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 function DeleteAllModal({ isDeleteAllModalOpen, setIsDeleteAllModalOpen }) {
   const { notes, setNotes } = useNotes();
-  const { setTrashNotes } = useTrashNotes();
+  const { trashNotes, setTrashNotes } = useTrashNotes();
 
   const modalRef = useRef(null);
 
@@ -28,11 +28,9 @@ function DeleteAllModal({ isDeleteAllModalOpen, setIsDeleteAllModalOpen }) {
 
   // Move all notes to Trash
   const handleMoveToTrash = () => {
-    setTrashNotes((prev) => {
-      const updated = [...prev, ...notes];
-      localStorage.setItem("trashNotes", JSON.stringify(updated));
-      return updated;
-    });
+    const updated = [...trashNotes, ...notes];
+    setTrashNotes(updated);
+    localStorage.setItem("trashNotes", JSON.stringify(updated));
     setNotes([]);
     localStorage.setItem("Notes", JSON.stringify([]));
     setIsDeleteAllModalOpen(false);

@@ -1,9 +1,10 @@
-import { IoMdArrowBack, IoMdTrash } from "react-icons/io";
+import { IoMdArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import useNotes from "../../notes/hooks/useNotes";
 import useTrashNotes from "../hooks/useTrashNotes";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
+import { BsTrash3 } from "react-icons/bs";
 
 function TrashBinNav({ setIsTrashDeleteAllModalOpen }) {
   // Access notes and trashNotes from context
@@ -13,8 +14,6 @@ function TrashBinNav({ setIsTrashDeleteAllModalOpen }) {
 
   // Restore all notes from trash to active notes
   const handleRestoreAll = () => {
-    if (trashNotes.length === 0) return;
-
     const updatedNotes = [...notes, ...trashNotes];
     setNotes(updatedNotes);
     setTrashNotes([]);
@@ -49,32 +48,34 @@ function TrashBinNav({ setIsTrashDeleteAllModalOpen }) {
           <div className="flex sm:flex-row flex-col justify-between sm:items-center gap-3 sm:gap-5">
             {/* Trash Bin Title */}
             <div className="flex items-center gap-3">
-              <IoMdTrash className="drop-shadow-sm text-[30px] text-sky-500 dark:text-sky-300" />
+              <BsTrash3 className="drop-shadow-sm text-[30px] text-sky-500 dark:text-sky-300" />
               <h1 className="font-bold text-sky-500 dark:text-white text-2xl sm:text-3xl leading-tight tracking-tight">
                 Trash Bin
               </h1>
             </div>
 
             {/* Restore All & Delete All Buttons */}
-            <div className="flex items-center gap-3">
-              {/* Restore All Button */}
-              <button
-                onClick={handleRestoreAll}
-                className="bg-gradient-to-r from-sky-500 hover:from-sky-600 to-blue-600 hover:to-blue-700 shadow-md dark:shadow-lg px-5 py-2 rounded-lg font-semibold text-white text-sm transition duration-200 cursor-pointer"
-              >
-                Restore All
-              </button>
+            {trashNotes.length > 1 && (
+              <div className="flex items-center gap-3">
+                {/* Restore All Button */}
+                <button
+                  onClick={handleRestoreAll}
+                  className="bg-gradient-to-r from-sky-500 hover:from-sky-600 to-blue-600 hover:to-blue-700 shadow-md dark:shadow-lg px-5 py-2 rounded-lg font-semibold text-white text-sm transition duration-200 cursor-pointer"
+                >
+                  Restore All
+                </button>
 
-              {/* Delete All Button (opens confirmation modal) */}
-              <button
-                onClick={() => {
-                  setIsTrashDeleteAllModalOpen(true);
-                }}
-                className="bg-gradient-to-r from-red-500 hover:from-red-600 to-pink-500 hover:to-pink-600 shadow-md dark:shadow-lg px-5 py-2 rounded-lg font-semibold text-white text-sm transition duration-200 cursor-pointer"
-              >
-                Delete All
-              </button>
-            </div>
+                {/* Delete All Button (opens confirmation modal) */}
+                <button
+                  onClick={() => {
+                    setIsTrashDeleteAllModalOpen(true);
+                  }}
+                  className="bg-gradient-to-r from-red-500 hover:from-red-600 to-pink-500 hover:to-pink-600 shadow-md dark:shadow-lg px-5 py-2 rounded-lg font-semibold text-white text-sm transition duration-200 cursor-pointer"
+                >
+                  Delete All
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

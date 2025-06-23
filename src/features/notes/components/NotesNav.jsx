@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { IoMdTrash } from "react-icons/io";
 import { MdDarkMode, MdLightMode, MdSearch } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import { BsTrash3 } from "react-icons/bs";
 
 // Top navigation bar for Notes page (logo, search, dark mode toggle, trash button)
-function NotesNav({ handleDarkMode, modes, search, setSearch }) {
+function NotesNav({ modes, setModes, search, setSearch }) {
   const [visibleSearch, setVisibleSearch] = useState(false); // mobile search toggle
+
+  // Toggle dark/light mode
+  const handleDarkMode = () => {
+    setModes((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   return (
     <motion.section
@@ -47,6 +52,7 @@ function NotesNav({ handleDarkMode, modes, search, setSearch }) {
         <div className="flex items-center gap-3">
           {/* Mobile: Toggle search input */}
           <button
+            title="Search"
             onClick={() => setVisibleSearch(!visibleSearch)}
             className="md:hidden bg-sky-500 hover:bg-sky-600 shadow-md p-3 rounded-full text-white text-2xl active:scale-95 transition-transform cursor-pointer"
           >
@@ -58,15 +64,20 @@ function NotesNav({ handleDarkMode, modes, search, setSearch }) {
             onClick={handleDarkMode}
             className="bg-sky-500 hover:bg-sky-600 shadow-md p-3 rounded-full text-white text-2xl active:scale-95 transition-transform cursor-pointer"
           >
-            {modes === "light" ? <MdDarkMode /> : <MdLightMode />}
+            {modes === "light" ? (
+              <MdDarkMode title="Dark Mode" />
+            ) : (
+              <MdLightMode title="Light Mode" />
+            )}
           </button>
 
           {/* Go to Trash Bin page */}
           <NavLink
+            title="Trash Bin"
             to="/trashbin"
             className="bg-sky-500 hover:bg-sky-600 shadow-md p-3 rounded-full text-white text-2xl active:scale-95 transition-transform cursor-pointer"
           >
-            <IoMdTrash />
+            <BsTrash3 />
           </NavLink>
         </div>
       </div>

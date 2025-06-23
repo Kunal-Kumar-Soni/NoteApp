@@ -51,7 +51,7 @@ function NotesList({
           <button
             onClick={() => setIsDeleteAllModalOpen(true)}
             title="Delete All"
-            className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 shadow-md dark:shadow-lg hover:brightness-110 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-semibold text-white text-sm transition-all duration-300 cursor-pointer"
+            className="flex items-center gap-2 bg-gradient-to-r from-red-500 to-pink-500 shadow-md dark:shadow-lg hover:brightness-110 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-semibold text-white text-sm active:scale-95 transition-all duration-300 cursor-pointer"
           >
             <Trash2 className="hidden sm:block w-3 sm:w-4 h-3 sm:h-4" />
             Delete All

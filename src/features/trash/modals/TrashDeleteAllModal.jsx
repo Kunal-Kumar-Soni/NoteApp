@@ -31,8 +31,6 @@ const TrashDeleteAllModal = ({
 
   // Permanently delete all trash notes
   const handleDeleteAll = () => {
-    if (trashNotes.length === 0) return;
-
     setTrashNotes([]);
     localStorage.setItem("trashNotes", JSON.stringify([]));
     setIsTrashDeleteAllModalOpen(false);

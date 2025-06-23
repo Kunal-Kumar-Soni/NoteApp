@@ -119,17 +119,17 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 ## 📦 Installation & Run
 
 ```bash
-# Clone the repository
-$ git clone https://github.com/yourusername/notes-app.git
+# 1. Clone the repository
+git clone https://github.com/Kunal-Kumar-Soni/NoteApp.git
 
-# Navigate into the folder
-$ cd notes-app
+# 2. Navigate to the project directory
+cd NoteApp
 
-# Install dependencies (with Bun or npm)
-$ npm install
+# 3. Install dependencies
+npm install
 
-# Start development server
-$ npm run dev
+# 4. Start the development server
+npm run dev
 ```
 
 ---
@@ -146,4 +146,4 @@ MIT License
 
 ---
 
-> Built with ❤️ by Kunal
+> Designed & developed with ❤️ by Kunal Kumar Soni

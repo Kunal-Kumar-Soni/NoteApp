@@ -15,10 +15,7 @@ import DeleteAllModal from "../../features/notes/modals/DeleteAllModal";
 // Custom hook for accessing and updating notes
 import useNotes from "../../features/notes/hooks/useNotes";
 
-function NotesPage() {
-  // Theme state (light/dark)
-  const [modes, setModes] = useState(localStorage.getItem("Modes") || "dark");
-
+function NotesPage({ modes, setModes }) {
   // Modal visibility states
   const [isAddTextModalOpen, setIsAddTextModalOpen] = useState(false);
   const [isMenuModalOpen, setIsMenuModalOpen] = useState(false);
@@ -37,21 +34,6 @@ function NotesPage() {
   // Search state
   const [search, setSearch] = useState("");
 
-  // Toggle dark/light mode
-  const handleDarkMode = () => {
-    setModes((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
-  // Apply theme to document
-  useEffect(() => {
-    localStorage.setItem("Modes", modes);
-    if (modes === "light") {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
-    }
-  }, [modes]);
-
   return (
     <div className="dark:bg-slate-900 h-screen overflow-y-auto">
       {/* Floating Add Note Button */}
@@ -66,8 +48,8 @@ function NotesPage() {
       <NotesNav
         search={search}
         setSearch={setSearch}
-        handleDarkMode={handleDarkMode}
         modes={modes}
+        setModes={setModes}
       />
 
       {/* Modals and Components */}
