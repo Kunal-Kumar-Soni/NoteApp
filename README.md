@@ -140,10 +140,4 @@ npm run dev
 
 ---
 
-## 📃 License
-
-MIT License
-
----
-
 > Designed & developed with ❤️ by Kunal Kumar Soni
