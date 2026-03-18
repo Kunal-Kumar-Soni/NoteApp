@@ -28,7 +28,7 @@ function NotesNav({ modes, setModes, search, setSearch }) {
         <div className="flex items-center">
           <img
             className="mr-1 md:mr-2 h-9 sm:h-10 object-contain"
-            src="images/note-logo.png"
+            src="/note-logo.png"
             alt="logo"
           />
           <h1 className="font-serif font-semibold text-sky-500 dark:text-white text-xl md:text-2xl tracking-wide">
