@@ -53,16 +53,11 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 
 ### 🌑 Dark Mode Support
 
-- Auto adapts to system theme.
 - Smooth color transitions.
 
 ### 🪤 Framer Motion Animations
 
 - All modals and buttons have entry/exit animations.
-
-### 🌐 Responsive Design
-
-- Mobile-first layout using Tailwind CSS.
 
 ### 🔔 Toast Notifications
 
@@ -72,11 +67,6 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 
 - Fully functional without any backend.
 - Fast, secure, and offline-ready.
-
-### 🧠 Smart Empty States
-
-- Friendly messages when no notes are available.
-- Encourages users to start writing.
 
 ---
 
