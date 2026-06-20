@@ -63,11 +63,6 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 
 - Real-time feedback using `react-toastify`.
 
-### LocalStorage Based
-
-- Fully functional without any backend.
-- Fast, secure, and offline-ready.
-
 ---
 
 ## Folder Structure (Simplified)
@@ -102,7 +97,6 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 - Framer Motion
 - React Icons
 - React Toastify
-- localStorage
 
 ---
 
