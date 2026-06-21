@@ -59,10 +59,6 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 
 - All modals and buttons have entry/exit animations.
 
-### Toast Notifications
-
-- Real-time feedback using `react-toastify`.
-
 ---
 
 ## Folder Structure (Simplified)
