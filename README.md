@@ -91,7 +91,6 @@ A beautifully designed, fully responsive Notes App built with React, Tailwind CS
 - React
 - Tailwind CSS
 - Framer Motion
-- React Icons
 - React Toastify
 
 ---
